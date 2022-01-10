@@ -6,7 +6,7 @@ import { setupServer } from 'msw/node';
 import CharacterList from './CharacterList'
 
 const server = setupServer(
-    rest.get('https://rickandmortyapi.com/api/character'), (req, res, ctx) => {
+    rest.get('https://rickandmortyapi.com/api/character', (req, res, ctx) => {
         return res(
             ctx.json({
                 
@@ -44,8 +44,9 @@ const server = setupServer(
              
             })
         )
-    }
-);
+    })
+)
+
 
 describe('Character List Page', () => {
 //This is how we user server to get it working. We want it to listen before running the test and close it out once rest renders
@@ -66,9 +67,11 @@ it('should render list of characters', async () =>{
     );
 
     screen.getByAltText('loading characters')
-  return waitFor(() => {
-      screen.getByText('Rick Sanchez');
-    })
+    await screen.findByText('Rick Sanchez')
+    
+//   return waitFor(() => {
+//       screen.getByText('Rick Sanchez');
+//     })
 
 })
 
