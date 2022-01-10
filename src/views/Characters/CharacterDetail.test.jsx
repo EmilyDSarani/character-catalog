@@ -6,7 +6,9 @@ describe('Character Detail Page', () => {
     it('should render a character', async () => {
         render(
             <MemoryRouter initialEntries={['/characters/1']}>
+                <Route>
                 <CharacterDetail />
+                </Route>
             </MemoryRouter>
         );
 
