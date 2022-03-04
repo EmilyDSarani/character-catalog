@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render characters 1`] = `
+<div>
+  <ul
+    aria-label="characters"
+    class="list"
+  >
+    <li
+      class="item"
+    >
+      <a
+        href="/characters/1"
+      >
+        <figure>
+          <img
+            alt="Sarani"
+            class="image"
+            src="https://place-puppy.com/"
+          />
+          <figcaption
+            class="linkText"
+          >
+            Sarani
+          </figcaption>
+        </figure>
+      </a>
+    </li>
+  </ul>
+</div>
+`;
